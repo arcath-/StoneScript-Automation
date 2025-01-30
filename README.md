@@ -2,7 +2,7 @@ Farming Scripts 0.1 for StoneStoryRPG
 ================================================
 
 This work is based on the proir work of Matjaž Guštin which is located
-@ https://matjaz.it and released under the BSD 3-clause license.
+[here](https://github.com/TheMatjaz/StoneScript) and released under the BSD 3-clause license.
 
 My StoneScript code used in the **amazing** ASCII-art game [Stone Story
 RPG](https://store.steampowered.com/app/603390/Stone_Story_RPG/)
