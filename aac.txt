@@ -1,0 +1,6 @@
+?item.right.state = 3
+  equipR *0 shield //trash
+  equip @item.right@
+?item.left.state = 3
+  equipL *0 wand //trash
+  equipL @item.left@

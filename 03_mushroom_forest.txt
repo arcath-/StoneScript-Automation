@@ -1,0 +1,40 @@
+/*
+Copyright © 2025, Shawn Thompson
+Based from Matjaž Guštin work located in
+README.md and was/is released under the 
+BSD 3-clause license.
+
+Level: Mushroom Forest
+Monsters: weak to poison.
+
+TODO: 
+*/
+
+var loadouts = import myScripts/loadouts
+
+?loc = fungus_forest
+  ?hp = maxhp | foe.distance <= 23
+    // Healed completely or enemy too close
+    loadouts.equipStaffPoison()
+  :
+    // Try to heal while attacking from afar
+    loadouts.equipRangedHealing()
+  ?hp <= 10
+    activate potion
+  loadouts.healwalk()
+
+?loc = fungus_forest_boss  // Boss room
+  ?foe = mushroom_boss_skinny  // Enoki
+    loadouts.equipStaffPoison()
+  :?foe = mushroom_boss // Angry or Morel
+    ?foe.distance >= 6
+      // Morel's hand keeps you at distance 5
+      loadouts.equipDashing()
+    :?foe.armor > 0
+      //loadouts.equipArmorPiercingPoison()
+      loadouts.equipMeleePoison()
+    :
+      loadouts.equipMeleePoison()
+  ?hp <= 10
+    activate potion
+  loadouts.healwalk()

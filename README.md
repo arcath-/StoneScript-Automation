@@ -38,7 +38,7 @@ Usage
 ----------------------------------------
 
 1. Clone this repository into a subfolder of the StoneScript directory (\*)
-   called `my`. On Windows the directory is:
+   called `myScripts`. On Windows the directory is:
    
    ```text
    %AppData%\LocalLow\Martian Rex, Inc_\Stone Story\<Steam ID>\Stonescript
@@ -47,8 +47,8 @@ Usage
    The cloning command should thus look like
    
    ```bash
-   cd %AppData%\LocalLow\Martian Rex, Inc_\Stone Story\<Steam ID>\Stonescript
-   git clone https://github.com/arcath-/StoneScript-Automation.git my
+   cd '.\AppData\LocalLow\Martian Rex, Inc_\Stone Story\<Steam ID>\Stonescript\'
+   git clone https://github.com/arcath-/StoneScript-Automation.git myScripts
    ```
 
 2. Copy-paste the content of the
