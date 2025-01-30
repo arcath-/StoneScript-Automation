@@ -8,7 +8,7 @@ Level: Mushroom Forest
 Monsters: weak to poison.
 
 
-FOR GAME VERSION v3.14.2 as of 2022-04-25
+FOR GAME VERSION v4.9.2 as of 2025-01-18
 
 Keep lines at 48 characters at most, because
 that is the line length of the mind stone UI
