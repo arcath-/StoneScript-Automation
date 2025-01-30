@@ -1,12 +1,8 @@
 /*
 Copyright © 2025, Shawn Thompson
-Based from Matjaž Guštin work located in
-README.md and was/is released under the 
+Based from Matjaz Gustin's work located
+in README.md and was/is released under the 
 BSD 3-clause license.
-
-Level: Mushroom Forest
-Monsters: weak to poison.
-
 
 FOR GAME VERSION v4.9.2 as of 2025-01-18
 
@@ -24,12 +20,12 @@ import myScripts/aac
 import fishing
 //import Cosmetics/PetBoo
 
-//import myScripts/myUI
+import myScripts/myUI
 //import myScripts/00_rocky_plateau
 //import myScripts/01_deadwood_canyon
-//import myScripts/02_caves_of_fear
+import myScripts/02_caves_of_fear
 import myScripts/03_mushroom_forest
 //import myScripts/04_haunted_halls
 //import myScripts/05_boiling_mine
 //import myScripts/06_icy_ridge
-//mport myScripts/07_temple
+import myScripts/07_temple

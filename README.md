@@ -56,5 +56,9 @@ Usage
   file into the in-game Mindstone UI. This will load all other sub-scripts,
   one per level.
 
+3. Modify the variables in 
+   [loadouts.txt](https://raw.githubusercontent.com/arcath-/StoneScript-Automation/master/loadouts.txt)
+   file to match your in inventory items. See comments at top of file for formatting.
+
 3. Modify the scripts as you please for your own playing.
    Hold TAB for debug information while playing a level.

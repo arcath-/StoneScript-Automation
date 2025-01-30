@@ -1,0 +1,12 @@
+/*
+Copyright © 2025, Shawn Thompson
+Based from Matjaz Gustin's work located in README.md and was/is
+released under the BSD 3-clause license.
+
+Level: Temple
+Monsters: weak to frost
+
+TODO: 
+*/
+
+var loadouts = import myScripts/loadouts

@@ -1,3 +1,23 @@
+/*
+
+Weapons have four states, used internally to determine what animations to
+display and if the weapon is allowed to begin dealing damage or not. The 
+relevant one for AAC is called "perf", or just state 3. By interrupting the
+animation while it is in "perf", you can force it to proceed to state 4,
+"cooldown", instantly, rather than waiting for all frames of "perf" to
+happen before it then begins "cooldown". Because "perf" is used to indicate
+to the game weapon animation frames to draw, a characteristic of AAC is to
+make weapon swing animations cut off prematurely. This has no effect on
+damage output; in fact, the whole point of AAC is to increase damage output. 
+
+Skeleton Arm and Rune Staffs while using Berserk Potions and attack speed
+enhancements, will not interact correctly with the AAC script below.
+
+See implementations for the above at: 
+https://stonestoryrpg.miraheze.org/wiki/Guide:Attack_Animation_Canceling
+
+*/
+
 ?item.right.state = 3
   equipR *0 shield //trash
   equip @item.right@

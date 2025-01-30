@@ -1,0 +1,34 @@
+/*
+Copyright © 2025, Shawn Thompson
+Based from Matjaz Gustin's work located in README.md and was/is
+released under the BSD 3-clause license.
+
+Level: Caves of Fear
+Monsters: weak to frost.
+
+TODO: 
+*/
+
+var loadouts = import myScripts/loadouts
+
+?loc = caves    
+    ?foe ! boss  // Small enemies
+        ?hp = maxhp | foe.distance <= 23
+            // Healed completely or enemy too close 
+            //loadouts.equipStaffIce()
+            loadouts.equipGhostSlayer()
+        :
+            // Try to heal while attacking from afar
+            //loadouts.equipRangedHealing()
+            loadouts.equipGhostSlayer()
+    :?foe = boss  // Bolesh, the cunning
+        ?foe.distance > 10
+            loadouts.equipDashing()      
+        :
+            //loadouts.equipMeleeFireShield()
+            loadouts.equipBladeOfGod()
+        
+    :?hp < 10
+        activate potion
+
+    loadouts.healwalk()

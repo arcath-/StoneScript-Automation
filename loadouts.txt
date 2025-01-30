@@ -1,65 +1,98 @@
 /*
-CCopyright © 2025, Shawn Thompson
-Based from Matjaž Guštin work located in
-README.md and was/is released under the 
-BSD 3-clause license.
+Copyright © 2025, Shawn Thompson
+Based from Matjaz Gustin's work located in README.md and was/is
+released under the BSD 3-clause license.
 
-Sets of weapons and stats abstracted away
-as nicely named functions.
+Sets of weapons and stats abstracted away as nicely named functions.
 
-Player needs to change the individual weapons
-below to match their own best inventory and
-update as needed to further general
+Player needs to change the individual weapon variables below to match
+their own best inventory and update as needed to further general
 progression.
 
-TODO: lots... lol
+Item formatting:
+<equip command> <rune prefix> <item type> <star level> <enchant level>
+
+E.g.
+equipR vigor crossbow *8 +5
+
+
+TODO: lots... lol and refactoring...
 */
 
-// Place this function at the default case
-// of any switch-case
+//Varriables
+var shieldDashing = "dashing shield *8 +4"
+var shieldNormal  = "shield *7 +1" 
+var shieldPoison  = "poison shield *7 +5"
+var shieldFire    = "fire shield"
+
+var swordNormal   = "sword +1"
+var swordPoison   = "poison sword *7 +5"
+
+var staffPoison   = "poison staff *6 +8"
+var staffIce      = "ice staff"
+
+var warhammerNormal = "warhammer"
+var warhammerPoison = "poison warhammer"
+
+var crossbowNormal = "crossbow"
+
+var ghostSlayer = "ghost slayer"
+var bladeOfGod  = "blade_of_god"
+
+
+
+// Place this function at the default case of any switch-case
 func healwalk()
 
   // Pick up materials quickly with Star stone
   ?pickup.distance < 10
     equipL star
-    equipR shield *7
+    equipR @shieldNormal@
 
-  // Heal and gain armor while just walking
-  // towards next objective. If 100% healed,
-  // walk faster.
+  // Heal and gain armor while just walking towards next objective. If 100% healed, walk faster.
   :?foe.distance > 22
     ?hp < maxhp
       equipL ouroboros
-      equipR shield *7
+      equipR @shieldNormal@
     :
       equipL triskelion
-      equipR shield *7
+      equipR @shieldNormal@
 
 //melee functions
 func equipMeleePoison()
-  equipL sword *7 poison
-  equipR shield *7 poison
+  equipL @swordPoison@
+  equipR @shieldPoison@
+
+func equipMeleeFireShield()
+  equipL @swordNormal
+  equipR @shieldFire
 
 //Staff functions
 func equipStaffPoison()
-  equip staff *10 poison
-  //equip ghost slayer
+  equip @staffPoison@
+  
+func equipStaffIce()
+  equip @staffIce@
 
 //armor piercing functions
 func equipArmorPiercingPoison()
-  equipL warhammer *10 poison +5
-  equipR warhammer *10 +8
+  equipL @warhammerPoison@
+  equipR @warhammerNormal@
 
 //Dashing
 func equipDashing()
-  equipL sword *10
-  equipR shield *10 dashing
+  equipL @swordNormal@
+  equipR @shieldDashing@
 
 //Ranged functions
 func equipRangedHealing()
-  equipL crossbow *10
+  equipL @crossbowNormal@
   equipR ouroboros
 
-//equip the ghost slayer to regen in combat
-func staffHeal()
-  equip ghost slayer
+//Lost and unique weapons
+//equip the ghost slayer to regen hp in combat
+func equipGhostSlayer()
+  equip @ghostSlayer@
+
+func equipBladeOfGod()
+    equip @bladeOfGod@

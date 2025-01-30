@@ -1,0 +1,45 @@
+//By Boo
+//v1.1: Move top part of HUD to the right to let a potion sit in that slot and fixed some bugs with the health bar
+//v1.2: Added HP lost per loop to the stats up above, added a small "watermark" at the top of the screen
+//You may remove the following line if you wish to, but if my stuff gets used in videos or whatever that's a nice way to credit me ;)
+//>`0,0,#B2FF00,Boo was here!
+//Real script starts here
+var loops = 0
+var time_spent = 0
+var avg_per_loop = "None"
+var hp_at_last_frame = 0
+var hp_lost_total = 0
+var hp_lost_per_loop = 0
+?loc.begin
+	hp_at_last_frame = hp
+?loc.loop
+	loops++
+	avg_per_loop = time_spent / loops
+	hp_lost_per_loop = hp_lost_total / loops
+draw.Bg(0,1,#202020,screen.w,5)
+//>`30,1,#red,Fighting @foe@
+>`9,1,#yellow,In @loc.name@
+>`9,2,#white,Loops done: @loops@
+time_spent++
+>`9,3,#white,Frame: @time_spent@
+>`9,4,#cyan,Frames/loop: @avg_per_loop@
+?hp_at_last_frame > hp
+	hp_lost_total = hp_lost_total + (hp_at_last_frame - hp)
+hp_at_last_frame = hp
+>`9,5,#red,HP lost/loop: @hp_lost_per_loop@
+//Health bar thing
+var health_bar = ""
+var hp_per_tick = 0
+var health_height = 0
+health_bar = "HP: [█"
+hp_per_tick = maxhp / 16
+for i = 1..31
+	?hp >= hp_per_tick * i
+		health_bar = health_bar + "█"
+	:
+		health_bar = health_bar + " "
+	?(hp_per_tick * (i + 1)) > maxhp
+		i = 32
+health_bar = health_bar + "]"
+health_height = screen.h - 2
+>`0,@health_height@,#red,@health_bar@

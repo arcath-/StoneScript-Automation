@@ -1,8 +1,7 @@
 /*
 Copyright © 2025, Shawn Thompson
-Based from Matjaž Guštin work located in
-README.md and was/is released under the 
-BSD 3-clause license.
+Based from Matjaz Gustin's work located in README.md and was/is
+released under the BSD 3-clause license.
 
 Level: Mushroom Forest
 Monsters: weak to poison.
