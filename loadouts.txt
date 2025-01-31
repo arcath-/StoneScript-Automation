@@ -10,7 +10,7 @@ their own best inventory and update as needed to further general
 progression.
 
 Item formatting:
-<equip command> <rune prefix> <item type> <star level> <enchant level>
+<equip command> <rune or prefix> <item type> <star level> <enchant level>
 
 E.g.
 equipR vigor crossbow *8 +5
@@ -19,25 +19,27 @@ equipR vigor crossbow *8 +5
 TODO: lots... lol and refactoring...
 */
 
-//Varriables
+//Variables
 var shieldDashing = "dashing shield *8 +4"
 var shieldNormal  = "shield *7 +1" 
 var shieldPoison  = "poison shield *7 +5"
-var shieldFire    = "fire shield"
+var shieldFire    = "fire shield *2 +2"
 
-var swordNormal   = "sword +1"
+var swordNormal   = "sword *6"
 var swordPoison   = "poison sword *7 +5"
 
 var staffPoison   = "poison staff *6 +8"
-var staffIce      = "ice staff"
+var staffIce      = "ice staff *7 +12"
 
-var warhammerNormal = "warhammer"
-var warhammerPoison = "poison warhammer"
+var warhammerNormal = "warhammer *7 +4"
+var warhammerPoison = "poison hammer *7 +5"
+var warhammerIce    = "ice hammer *4 +4"
 
-var crossbowNormal = "crossbow"
+var crossbowNormal = "crossbow *8 +5"
 
 var ghostSlayer = "ghost slayer"
 var bladeOfGod  = "blade_of_god"
+var oblivionMaul = "Oblivion Maul *4 +7"
 
 
 
@@ -77,6 +79,10 @@ func equipStaffIce()
 //armor piercing functions
 func equipArmorPiercingPoison()
   equipL @warhammerPoison@
+  equipR @warhammerNormal@
+
+func equipArmorPiercingIce()
+  equipL @warhammerIce@
   equipR @warhammerNormal@
 
 //Dashing

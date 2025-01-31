@@ -10,3 +10,31 @@ TODO:
 */
 
 var loadouts = import myScripts/loadouts
+
+//func staff_heal()
+//  equip ghost slayer
+
+//func equip_melee()
+
+?loc = temple    
+    ?foe ! boss  // Small enemies
+        ?hp >= 22
+            // Healed completely or enemy too close 
+            loadouts.equipStaffIce()
+        :?foe.armor > 0
+            loadouts.equipArmorPiercingIce()
+        :?hp >= 10
+            activate potion                   
+        :
+            // Try to heal while attacking from afar
+            loadouts.equipRangedHealing()
+            //loadouts.equipGhostSlayer()
+    :?foe = boss  // Nagaraja
+        ?foe.distance > 10
+            loadouts.equipDashing()      
+        :
+            loadouts.equipBladeOfGod()
+        ?hp <= 10 | debuffs.count >= 8
+            activate potion
+
+    loadouts.healwalk()

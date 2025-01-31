@@ -1,4 +1,8 @@
-//import myScripts/booUI
+/*
+Copyright © 2025, Shawn Thompson
+
+TODO: Make a UI... 
+*/
 
 import UI/BetterInfo2
 
